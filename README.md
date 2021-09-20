@@ -1,8 +1,7 @@
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
-
-![TODO: Update the path with the name of your diagram](ELK-Stack-Project/Images/Stephanie-Azure-Diagram.drawio.png)
+![Stephanie-Azure-Diagram drawio](https://user-images.githubusercontent.com/78007547/134023423-a4692690-6ae1-4679-b10a-efeb2891e2f1.png)
 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.

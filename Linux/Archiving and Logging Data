@@ -1,0 +1,26 @@
+Step 1
+tar xvvf TarDocs.tar 
+tar --exclude='Java' cvvf Javaless_Docs.tar ~/Projects/
+tar tvvf Javaless_Docs.tar | grep Java
+sudo tar cvvWf logs_backup.tar.gz --listed-incremental=snapshot.file --level=0 /var/log
+
+Step 2
+0 6 * * 3  tar cvf /auth_backup.tgz /var/log/auth.log
+gzip auth_backup.tgz.gz
+
+Step 3
+mkdir ~/backups/{freemem,diskuse,openlist,freedisk}
+free -h --total | awk 'FNR == 2 {print $4}' > ~/backups/freemem/free_mem.txt
+df -h --total | awk 'FNR == 38 {print $3}' > ~/backups/diskuse/disk_usage.txt
+lsof > ~/backups/openlist/open_list.txt
+df -k > ~/backups/freedisk/free_disk.txt.
+bash system.sh
+Step 4
+/var/log/auth.log {
+    weekly
+    rotate 7
+    notifempty
+    delaycompress
+    missingok
+    endscript
+}

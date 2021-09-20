@@ -1,0 +1,81 @@
+Snort Rule Analysis
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 5800:5820 (msg:"ET SCAN Potential VNC Scan 5800-5820"; flags:S,12; threshold: type both, track by_src, count 5, seconds 60; reference:url,doc.emergingthreats.net/2002910; 
+classtype:attempted-recon; sid:2002910; rev:5; metadata:created_at 2010_07_30, updated_at 2010_07_30;)
+
+This rule indicates that an alert will be triggered when any inbound TCP traffic from ports 5800 to 5820 is detected to $HOME_NET. This violates the first stage (reconnaissance) of the Cyber Kill Chain.
+The indicated attack is An ET SCAN Potential VNC scan.
+
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"ET POLICY PE EXE or DLL Windows file download HTTP"; flow:established,to_client; flowbits:isnotset,ET.http.binary; flowbits:isnotset,ET.INFO.WindowsUpdate; 
+file_data; content:"MZ"; within:2; byte_jump:4,58,relative,little; content:"PE|00 00|"; distance:-64; within:4; flowbits:set,ET.http.binary; metadata: former_category POLICY; 
+reference:url,doc.emergingthreats.net/bin/view/Main/2018959; classtype:policy-violation; sid:2018959; rev:4; metadata:created_at 2014_08_19, updated_at 2017_02_01;)
+
+This rule indicates that an alert will be triggered when TCP traffic is headed to the $HOME_NET over $HTTP_PORTS (80). This alert violates the policies, awareness, and procedures in the Defense in Depth model.
+The indicated attack is “ET POLICY PE EXE or DDL Windows file download”.
+
+Write a Snort rule that alerts when traffic is detected inbound on port 4444 to the local network on any port. Be sure to include the msg in the Rule Option.
+Answer:
+alert tcp $EXTERNAL_NET 4444 > $HOME_NET any {msg: “Trojan Horse”}
+
+Part 2
+
+sudo systemctl disable ufw
+sudo systemctl enable firewalld	
+sudo systemctl start firewalld
+sudo firewall-cmd --state
+sudo firewall-cmd --list-all
+sudo firewall-cmd --get-services
+sudo firewall-cmd --list-all-zones
+
+Create Zones for Web, Sales and Mail:
+sudo firewall-cmd --permanent --new-zone=web
+sudo firewall-cmd --permanent --new-zone=sales
+sudo firewall-cmd --permanent --new-zone=mail
+Set the zones to their designated interfaces:
+sudo firewall-cmd --zone=web --change-interface=eth0
+sudo firewall-cmd --zone=sales --change-interface=eth0
+sudo firewall-cmd --zone=mail --change-interface=eth0
+sudo firewall-cmd --zone=public --change-interface=eth0
+
+Add services to the active zones:
+Public: 
+sudo firewall-cmd --zone=public --add-service=smtp
+sudo firewall-cmd --zone=public --add-service=http
+sudo firewall-cmd --zone=public --add-service=https
+sudo firewall-cmd --zone=public -add-service=pop3
+
+Web: 
+sudo firewall-cmd --zone=web --add-service=http
+
+Sales: 
+sudo firewall-cmd --zone=sales --add-service=https
+
+Mail:
+sudo firewall-cmd --zone --add-service=smtp
+sudo firewall-cmd --zone -add-service=pop3
+
+Add your adversaries to the Drop Zone:
+sudo firewall-cmd  --permanent --zone-drop --add-source=10.208.56.23
+sudo firewall-cmd  --permanent --zone-drop --add-source=135.95.103.76
+sudo firewall-cmd  --permanent --zone-drop --add-source=76.34.169.118
+Make rules permanent then reload them:
+sudo firewall-cmd --reload
+
+View active Zones:
+
+sudo firewall-cmd --get-active-zones
+
+Block an IP address:
+sudo firewall-cmd --zone=public --add-rich-rule=’rule family=”ipv4” source address=” 138.138.0.3” reject’
+
+Block Ping/ICMP Requests:
+sudo firewall-cmd --zone=public --add-icmp-block=echo-reply --add-icmp-block=echo-request
+
+Rule Check:
+
+ sudo firewall-cmd --zone=web --list-all
+ sudo firewall-cmd --zone=sales--list-all
+ sudo firewall-cmd --zone=mail --list-all
+ sudo firewall-cmd --zone=drop--list-all
+ sudo firewall-cmd --zone=public --list-all
+

@@ -1,0 +1,38 @@
+Step 1
+ls -l /etc/shadow
+sudo chmod 600 /etc/shadow
+
+ls -l /etc/gshadow 
+sudo chmod 600 /etc/gshadow
+
+ls -l /etc/group
+sudo chmod 644 /etc/group
+
+ls -l /etc/passwd
+	udo chmod 644 /etc/passwd
+	
+Step 2
+sudo adduser sam
+sudo adduser joe
+sudo adduser amy
+sudo adduser sara 
+sudo adduser admin
+
+sudo usermod -aG sudo admin
+
+Step 3
+sudo addgroup engineers
+
+sudo usermod -aG engineers sam
+sudo usermod -aG engineers joe
+sudo usermod -aG engineers amy
+sudo usermod -aG engineers sara
+
+sudo mkdir /home/engineers
+   
+4.chown -R :engineers /home/engineers
+	
+Step 4
+sudo apt install lynis
+man lynis
+sudo lynis audit system

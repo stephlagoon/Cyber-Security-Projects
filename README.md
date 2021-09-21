@@ -20,7 +20,7 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available by forwarding traffic from port 80 (based on my network) to the backend pool, in addition the jump box server functions to restrict access to the network to authorized users.
+Load balancing ensures that the application will be highly available by forwarding traffic from port 80 (based on my network) to the backend pool, in addition, the jump box server functions to restrict access to the network to authorized users.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the system log files in web-1 and web-2 virtual networks using Filebeat software in addition to machine metrics, such as uptime with metricbeat software.
 
@@ -54,7 +54,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it allows you to configure multiple machines simultaneously while also minimizing errors.
+Ansible was used to automate the configuration of the ELK machine. No configuration was performed manually, which is advantageous because it allows you to configure multiple machines simultaneously while also minimizing errors.
 
 
 The playbook implements the following tasks:
@@ -78,7 +78,7 @@ We have installed the following Beats on these machines:
 - Filebeat
 - Metricbeat
 
-These Beats allows us to collect only the necessary data points. ELK supports eight beats. Two of the beats utilized in this project were Filebeat and Metricbeat. Filebeat collects data about the file system, including which files have been changed, as well as when they were changed.Additionally, Filebeat can monitor suspicious activity. This leaves a trace that can be followed and investigated using logs in the event that an attacker strikes the network. Suspicious activity includes brute force logins, as well as logins from IPs outside of the network. Filebeat, then, helps generate and organize these log files to send to Logstash and Elasticsearch in a GUI interface to help visualize Elasticsearch data with charts and graphs. Metricbeat, however, collects machine metrics from the operating system and from services running on the server. Metricbeat can analyze things like CPI, memory, and load from the operating system. Metricbeat can help monitor our servers by collecting metrics from the systems running on the server, such as services like Apache and MySQL.
+These Beats allow us to collect only the necessary data points. ELK supports eight beats. Two of the beats utilized in this project were Filebeat and Metricbeat. Filebeat collects data about the file system, including which files have been changed, as well as when they were changed. Additionally, Filebeat can monitor suspicious activity. This leaves a trace that can be followed and investigated using logs if an attacker strikes the network. Suspicious activity includes brute force logins, as well as logins from IPs outside of the network. Filebeat, then, helps generate and organize these log files to send to Logstash and Elasticsearch in a GUI interface to help visualize Elasticsearch data with charts and graphs. Metricbeat, however, collects machine metrics from the operating system and services running on the server. Metricbeat can analyze things like CPI, memory, and load from the operating system. Metricbeat can help monitor our servers by collecting metrics from the systems running on the server, such as services like Apache and MySQL.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 

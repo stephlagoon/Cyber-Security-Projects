@@ -110,7 +110,7 @@ Use the following command to run, download the playbook, update the files, etc.:
 ### Push commits to repo
 `git push origin --set-upstream <-branch->`
 
-## Commands to Start Ansible Container
+## Commands to start Ansible container
 
 ### command to list container
 `docker container list -a`

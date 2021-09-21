@@ -100,7 +100,7 @@ Use the following command to run, download the playbook, update the files, etc.:
 `git pull`
 
 
-## Update files and push repo
+## Update files and push to repo
 ### To add all files
 `git add . `
 ### To add specific files

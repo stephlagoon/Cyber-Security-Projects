@@ -92,24 +92,6 @@ SSH into the control node and follow the steps below:
 
 Use the following command to run, download the playbook, update the files, etc.:
 
-#
-## Download Repo
-`git clone [URL_to_Repo: https://github.com/stephlagoon/ELK-Stack-Project.git]`
-
-## Get Updates from Repo
-`git pull`
-
-
-## Update files and push to repo
-### To add all files
-`git add . `
-### To add specific files
-`git add [specific filename]`
-### To commit files with message
-`git commit -m "insert message here"`
-### Push commits to repo
-`git push origin --set-upstream <-branch->`
-
 ## Commands to start Ansible container
 
 ### command to list container

@@ -28,7 +28,7 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available by forwarding traffic from port 80 (based on my network) to the backend pool, in addition, the jump box server functions to restrict access to the network to authorized users.
+Load balancing ensures that the application will be highly available by forwarding traffic from port 80 to the backend pool, in addition, the jump box server functions to restrict access to the network to authorized users.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the system log files in web-1 and web-2 virtual networks using Filebeat software in addition to machine metrics, such as uptime with metricbeat software.
 

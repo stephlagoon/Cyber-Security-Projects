@@ -1,4 +1,10 @@
-## Automated ELK Stack Deployment
+# Capstone-Engagement
+
+## Project Overview
+[Capstone Engagement Project](https://docs.google.com/presentation/d/1yVwOIsT0Px6NWuMBwW0uYYxj5HPEF_dEFTGSfktfPPI/edit?usp=sharing)
+
+
+# Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 ![Stephanie-Azure-Diagram drawio](https://user-images.githubusercontent.com/78007547/134023423-a4692690-6ae1-4679-b10a-efeb2891e2f1.png)

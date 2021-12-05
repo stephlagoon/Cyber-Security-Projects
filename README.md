@@ -5,8 +5,14 @@ This project focuses on the role of a pentester and SOC analyst. As a pentester,
 
 [Capstone Engagement Project](https://docs.google.com/presentation/d/1yVwOIsT0Px6NWuMBwW0uYYxj5HPEF_dEFTGSfktfPPI/edit?usp=sharing)
 
+# Project II: Final Engagement 
 
-# Project II: Automated ELK Stack Deployment
+## Project Overview
+This project focuses on the role of a pentester and SOC analyst. As a pentester, I assesed vulnerable VMs that expose vulnerable web servers. Kibana was used to analyze logs and set test alerts.
+
+[Final Engagement Project](https://docs.google.com/presentation/d/1Njdc7paTTloNQwNaL8DG6gM4m04acLs5V8gaiFVmYIY/edit?usp=sharing)
+
+# Project III: Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 ![Stephanie-Azure-Diagram drawio](https://user-images.githubusercontent.com/78007547/134023423-a4692690-6ae1-4679-b10a-efeb2891e2f1.png)

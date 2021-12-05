@@ -8,7 +8,7 @@ This project focuses on the role of a pentester and SOC analyst. As a pentester,
 # Project II: Final Engagement 
 
 ## Project Overview
-This project focuses on the role of a pentester and SOC analyst. As a pentester, I assesed vulnerable VMs that expose vulnerable web servers. As a SOC Analyst, Kibana was used to analyze logs and set test alerts.
+This project focuses on the role of a pentester and SOC analyst. As a pentester, I assesed vulnerable VMs that expose vulnerable web servers. As a SOC Analyst, I utilized Kibana was used to analyze logs and set test alerts.
 
 [Final Engagement Project](https://docs.google.com/presentation/d/1Njdc7paTTloNQwNaL8DG6gM4m04acLs5V8gaiFVmYIY/edit?usp=sharing)
 
